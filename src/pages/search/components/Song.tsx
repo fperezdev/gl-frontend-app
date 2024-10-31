@@ -11,9 +11,10 @@ import { API_BASE_URL } from "../../../lib/consts";
 interface SongProps {
   song: SongType;
   userInfo: UserInfo | null;
+  sm: boolean;
 }
 
-const Song = ({ song, userInfo }: SongProps) => {
+const Song = ({ song, userInfo, sm }: SongProps) => {
   const setUserInfo = useStore((state) => state.setUserInfo);
   const setFavDialogSongId = useStore((state) => state.setFavDialogSongId);
 
@@ -59,7 +60,7 @@ const Song = ({ song, userInfo }: SongProps) => {
     <div
       key={song.cancion_id}
       style={{
-        width: 450,
+        width: sm ? 320 : 450,
         height: 120,
         position: "relative",
         padding: "10px 20px",

@@ -5,12 +5,17 @@ import {
   Pagination,
   Skeleton,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import SongComponent from "./Song";
 import FavDialog from "./FavDialog";
 
 const SongList = () => {
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down('sm'));
+
   const loading = useStore((state) => state.loadingArtistInfo);
   const userInfo = useStore((state) => state.userInfo);
   const artistInfo = useStore((state) => state.artistInfo);
@@ -33,7 +38,7 @@ const SongList = () => {
               width: "fit-content",
               margin: "20px 0",
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: sm ? "1fr" : "1fr 1fr",
               gap: "20px",
             }}
           >
@@ -41,11 +46,11 @@ const SongList = () => {
               <Skeleton
                 key={`songs-fetch-sk-${id}`}
                 variant="rectangular"
-                width={470}
+                width={sm ? 340 : 470}
                 height={160}
               />
             ))}
-          </div>
+          </div> 
         </div>
       ) : songs.length === 0 ? (
         <Typography variant="h6" sx={{ padding: "20px 0" }}>
@@ -71,7 +76,7 @@ const SongList = () => {
               width: "fit-content",
               margin: "20px 0",
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: sm ? "1fr" : "1fr 1fr",
               gap: "20px",
             }}
           >
@@ -87,6 +92,7 @@ const SongList = () => {
                   key={song.cancion_id}
                   song={song}
                   userInfo={userInfo}
+                  sm={sm}
                 />
               ))}
           </div>
