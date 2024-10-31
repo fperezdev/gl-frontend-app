@@ -39,6 +39,15 @@ const SearchBar = () => {
       const response = await fetch(url, {
         headers: { authorization: userInfo?.usuario || "" },
       });
+
+      if (response.status < 200 || response.status >= 300) {
+        if (response.status === 404) setError("No se encontró el artista");
+        else setError("Ocurrió un error al buscar el artista");
+        setArtistInfo(null);
+        setLoading(false);
+        return;
+      }
+
       const data: ArtistInfo = await response.json();
 
       setArtistInfoCache(searchQuery, data);
