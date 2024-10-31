@@ -1,41 +1,46 @@
+# Frontend App Grupo Lagos
+
+Aplicación de frontend para el desafío técnico de Grupo Lagos hecho por Francisco Perez.
+</br>
+Se conecta a la API de Itunes para obtener canciones de algún artista y también permite guardar favoritos.
+
+## Tabla de contenidos
+
+- [Frontend App Grupo Lagos](#frontend-app-grupo-lagos)
+  - [Tabla de contenidos](#tabla-de-contenidos)
+  - [Stack Tecnológico](#stack-tecnológico)
+  - [Instalación](#instalación)
+    - [Levantar localmente](#como-levantar-la-aplicación-localmente)
+  - [Consideraciones](#consideraciones)
+  - [Contribuyentes](#contribuyentes)
+
 ---
-title: Vite + React
-description: The default Vite + React starter, utilizing `Caddy` to serve the built app
-tags:
-  - node
-  - vite
-  - react
+
+## Stack Tecnológico
+
+- Node.js LTS 22.11.0
+- React 18 con TypeScript
+- Zustand
+- Material UI
+
 ---
 
-# Vite + React + Caddy
+## Instalación
 
-This is a [Vite + React](https://vitejs.dev/guide/#trying-vite-online) starter that uses [Caddy](https://caddyserver.com/).
+### Como levantar la aplicación localmente
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/NeiLty?referralCode=ySCnWl)
+Los siguientes pasos aplican tanto para Windows, Mac o Linux.
 
-## ✨ Features
+1. Clonar el repositorio con `git clone https://github.com/fperezdev/gl-app.git`
+2. Correr el comando `npm i` si se clonó por primera vez el proyecto. Esto estando en la carpeta raíz que contiene el `package.json`.
+3. Ejecutar el comando `npm run dev` para correr localmente la aplicación.
 
-- Vite + React
-- [Caddy](https://caddyserver.com/)
+## Consideraciones
 
-## 💁‍♀️ How to use
+Esta aplición cuenta con lo mínimo para cumplir los requerimientos del desafío, temas importantes como la seguridad se han dejado de lado para priorizar las funcionalidades.
 
-- Install required dependencies with `npm install`
-- Start the server for local development `npm run dev`
+---
 
-## ❓ Why use `Caddy` when deploying to Railway?
+## Contribuyentes
 
-Caddy is a powerful, enterprise-ready, open source web server, and therefore Caddy is far better suited to serve websites than Vite is, using Caddy will result in much less memory and cpu usage compared to serving with Vite (much lower running costs too)
-
-To see how this is achieved with nixpacks, check out the fully documented nixpacks.toml file in this repository
-
-The configuration for Caddy is called a Caddyfile, and you can edit that file to further suite your needs, by default it comes configured to serve a single page app for React, and to also gzip the responses
-
-**Relevant Caddy documentation:**
-
-- [The Caddyfile](https://caddyserver.com/docs/caddyfile)
-- [Caddyfile Directives](https://caddyserver.com/docs/caddyfile/directives)
-- [root](https://caddyserver.com/docs/caddyfile/directives/root)
-- [encode](https://caddyserver.com/docs/caddyfile/directives/encode)
-- [file_server](https://caddyserver.com/docs/caddyfile/directives/file_server)
-- [try_files](https://caddyserver.com/docs/caddyfile/directives/try_files)
+- Francisco Perez Lefiman
